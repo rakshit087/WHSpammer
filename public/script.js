@@ -12,7 +12,8 @@ async function sendMessage(message) {
   });
 }
 
-document.getElementById("btn").addEventListener("click", async (e) => {
+const btn = document.getElementById("btn");
+btn.addEventListener("focus", async (e) => {
   console.log("Button Clicked");
   const n_element = document.getElementById("number");
   const message_element = document.getElementById("message");
@@ -34,7 +35,7 @@ document.getElementById("btn").addEventListener("click", async (e) => {
   status.innerHTML = "Sent <strong>" + n + "</strong> Messages";
   const reset = document.getElementById("reset");
   reset.classList.remove("noDisplay");
-  reset.addEventListener("click", (e) => {
+  reset.addEventListener("focus", (e) => {
     e.srcElement.classList.add("noDisplay");
     form.classList.remove("noDisplay");
     status.innerHTML = "";
