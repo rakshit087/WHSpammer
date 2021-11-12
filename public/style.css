@@ -4,10 +4,14 @@ body {
   text-align: center;
 }
 
-h3{
-    color:#99a799;
-    font-weight: bold;
-    font-size:1rem;
+h3 {
+  color: #99a799;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+h4 {
+  color: orange;
 }
 
 form {
@@ -66,10 +70,10 @@ button:active {
 }
 
 p {
-    font-size: 0.85rem;
-    color: #99a799;
+  font-size: 0.85rem;
+  color: #99a799;
 }
 
 .noDisplay {
-    display: none;
+  display: none;
 }

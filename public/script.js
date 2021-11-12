@@ -13,6 +13,7 @@ async function sendMessage(message) {
 }
 
 document.getElementById("btn").addEventListener("click", async (e) => {
+  console.log("Button Clicked");
   const n_element = document.getElementById("number");
   const message_element = document.getElementById("message");
   const n = n_element.value ? n_element.value : 1;
@@ -23,9 +24,12 @@ document.getElementById("btn").addEventListener("click", async (e) => {
   form.classList.add("noDisplay");
   const status = document.getElementById("status");
   for (let i = n; i > 0; i--) {
-    status.innerHTML = "Sending " + i + " Messages";
+    status.innerHTML =
+      "Sending " +
+      i +
+      " Messages <br> Click anywhere outside Extension to Stop";
     sendMessage(message);
-    await sleep(100);
+    await sleep(200);
   }
   status.innerHTML = "Sent <strong>" + n + "</strong> Messages";
   const reset = document.getElementById("reset");
