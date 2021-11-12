@@ -1,6 +1,4 @@
-console.log("Whatsapp Running");
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  console.log(message);
   var event = new InputEvent("input", {
     bubbles: true,
   });
