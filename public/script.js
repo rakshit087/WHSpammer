@@ -22,7 +22,7 @@ document.getElementById("btn").addEventListener("click", async (e) => {
   const form = document.querySelector("form");
   form.classList.add("noDisplay");
   const status = document.getElementById("status");
-  for (let i = n; i >= 0; i--) {
+  for (let i = n; i > 0; i--) {
     status.innerHTML = "Sending " + i + " Messages";
     sendMessage(message);
     await sleep(100);
