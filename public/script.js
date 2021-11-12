@@ -2,6 +2,15 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function sendMessage(message){
+    let params = {
+        currentWindow: true
+    }
+    chrome.tabs.query(params,(tabs)=>{
+        chrome.tabs.sendMessage(tabs[0].id, message)
+    })
+}
+
 document.getElementById("btn").addEventListener("click",async (e) => {
   const n_element = document.getElementById("number");
   const message_element = document.getElementById("message");
@@ -14,6 +23,7 @@ document.getElementById("btn").addEventListener("click",async (e) => {
   const status = document.getElementById("status");
   for(let i = n; i>=0; i--) {
     status.innerHTML = "Sending " +  i + " Messages";
+    sendMessage(message);
     await sleep(100);
   }
   status.innerHTML = "Sent <strong>" +  n + "</strong> Messages";
